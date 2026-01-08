@@ -1,0 +1,25 @@
+[
+  {
+    "id": "shimotsuki-san-wa-mob-ga-suki",
+    "title": "Shimotsuki-san wa Mob ga Suki",
+    "type": "manga",
+    "rating": 7.99,
+    "status": "tamat",
+    "genres": ["School Life"],
+    "banner": "/shimotsuki-san-wa-mob-ga-suki/chapter/Komik-Shimotsuki-san-wa-Mobu-ga-Suki-Hitomishiri-na-Kanojo-wa-Ore-ni-Dake-Dere-Amai-224x319.jpg",
+    "desc": "Shimotsuki-san wa Mob ga Suki Manga adalah serial komik yang bertemakan School Life dan juga mengandung demografis Seinen, Shounen. Update chapter terbaru komik Shimotsuki-san wa Mob ga Suki adalah tanggal Oktober 7, 2025.",
+    "image": {
+      "chapter_1": [
+        "/shimotsuki-san-wa-mob-ga-suki/chapter/pI7PjO34H1dICjays2Cnro0gwKxG6ZklLcohnjvX.jpg",
+        "/shimotsuki-san-wa-mob-ga-suki/chapter/bUMaYJdyyPJmO3vYpjjiuGszvsT0Gvz3NlDNLPce.jpg",
+        "/shimotsuki-san-wa-mob-ga-suki/chapter/Bvbohj2YvZr4wAbKdQWJvFCIBrzNwBSXDsdGepB6.jpg",
+        "https://picsum.photos/seed/solo-ch1-4/800/1300"
+      ],
+      "chapter_2": [
+        "https://picsum.photos/seed/solo-ch2-1/800/1200",
+        "https://picsum.photos/seed/solo-ch2-2/800/1000",
+        "https://picsum.photos/seed/solo-ch2-3/800/1100"
+      ]
+    }
+  }
+]
