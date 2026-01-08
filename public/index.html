@@ -1,0 +1,73 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baca Manga - Vertical Scroll</title>
+    <!-- Memuat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Memuat CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi Atas -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <h1 class="manga-title">Solo Leveling</h1>
+                <span class="current-chapter-label">Chapter <span id="current-chapter-num">1</span></span>
+            </div>
+            <div class="nav-right">
+                <button id="btn-chapter-list" class="btn-icon" title="Daftar Chapter">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Area Utama Baca (Konten Vertikal) -->
+    <main class="reader-container">
+        <div id="image-container" class="image-list">
+            <!-- Gambar akan dimuat di sini oleh JavaScript -->
+        </div>
+        
+        <!-- Indikator Loading -->
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <p>Memuat halaman...</p>
+        </div>
+        
+        <div class="spacer"></div> <!-- Spacer agar tombol bawah tidak menutupi gambar terakhir -->
+    </main>
+
+    <!-- Navigasi Bawah (Floating) -->
+    <aside class="bottom-controls">
+        <button id="btn-prev" class="control-btn">Sebelumnya</button>
+        <button id="btn-top" class="control-btn icon-only">↑</button>
+        <button id="btn-next" class="control-btn">Selanjutnya</button>
+    </aside>
+
+    <!-- Modal Daftar Chapter -->
+    <div id="chapter-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Pilih Chapter</h2>
+                <button id="btn-close-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <ul id="chapter-list" class="chapter-list">
+                    <!-- List chapter digenerate via JS -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification (Pengganti Alert) -->
+    <div id="toast" class="toast hidden">Notifikasi</div>
+
+    <!-- Memuat Script -->
+    <script src="script.js"></script>
+</body>
+</html>
