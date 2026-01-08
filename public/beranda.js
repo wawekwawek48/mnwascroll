@@ -9,11 +9,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const catButtons = document.querySelectorAll('.cat-btn');
 
     try {
-        // 1. Fetch Data
+        // 1. Fetch Data dari public/manga_data.json
         const response = await fetch('/manga_data.json');
+        if (!response.ok) throw new Error("Gagal mengambil data");
         allMangaData = await response.json();
 
-        // 2. Render Awal
+        // 2. Render Awal (Semua Manga)
         renderManga(allMangaData);
 
         // 3. Event Listener: Search
@@ -37,10 +38,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     } catch (error) {
         console.error("Gagal memuat data:", error);
-        grid.innerHTML = `<p style="color:red; text-align:center;">Gagal memuat data manga.</p>`;
+        grid.innerHTML = `<p style="color:red; text-align:center;">Gagal memuat data manga. Periksa console.</p>`;
     }
 
-    // Fungsi Render Kartu
+    // --- Fungsi Render Kartu ---
     function renderManga(data) {
         grid.innerHTML = '';
         countSpan.textContent = data.length;
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         data.forEach(manga => {
-            // Tentukan gambar fallback jika banner kosong
+            // Tentukan gambar fallback jika banner kosong / salah path
             const imgSrc = manga.banner || `https://picsum.photos/seed/${manga.id}/300/450`;
             
             // Badge warna status
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             const card = document.createElement('div');
             card.className = 'manga-card';
-            card.onclick = () => openManga(manga.id); // Klik card -> buka reader
+            card.onclick = () => openManga(manga.id); // Klik card
 
             card.innerHTML = `
                 <div class="card-image-wrapper">
@@ -83,14 +84,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // Fungsi Filter
+    // --- Fungsi Filter ---
     function filterData(keyword, type) {
         const filtered = allMangaData.filter(item => {
-            // Filter Judul
             const matchTitle = item.title.toLowerCase().includes(keyword);
-            // Filter Tipe
             const matchType = type === 'all' || item.type === type;
-            
             return matchTitle && matchType;
         });
         renderManga(filtered);
@@ -101,8 +99,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         return activeBtn ? activeBtn.getAttribute('data-type') : 'all';
     }
 
-    // Redirect ke halaman reader dengan ID
+    // --- Redirect ke Reader ---
     function openManga(id) {
-        window.location.href = `index.html?id=${id}`;
+        // Penting: Mengarah ke reader.html (bukan index.html) agar tidak bentrok
+        window.location.href = `reader.html?id=${id}`;
     }
 });
