@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Komik & Manga</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="beranda-body">
+
+    <!-- Navbar -->
+    <header class="beranda-nav">
+        <div class="nav-container">
+            <h1 class="brand">Manga<span style="color:var(--accent-color)">Read</span></h1>
+        </div>
+    </header>
+
+    <!-- Search & Filter Section -->
+    <section class="search-section">
+        <div class="container">
+            <input type="text" id="search-input" placeholder="Cari judul manga..." class="search-box">
+            
+            <div class="categories" id="category-container">
+                <button class="cat-btn active" data-type="all">Semua</button>
+                <button class="cat-btn" data-type="manga">Manga</button>
+                <button class="cat-btn" data-type="manhwa">Manhwa</button>
+                <button class="cat-btn" data-type="manhua">Manhua</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manga Grid -->
+    <main class="container">
+        <div class="stats-bar" id="stats-bar">
+            Menampilkan <span id="count">0</span> hasil
+        </div>
+        
+        <div id="manga-grid" class="manga-grid">
+            <!-- Kartu Manga akan dirender di sini oleh JS -->
+            <div class="loading-text">Memuat data...</div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="beranda-footer">
+        <p>&copy; 2023 MangaReader Hybrid. All rights reserved.</p>
+    </footer>
+
+    <script src="beranda.js"></script>
+</body>
+</html>
