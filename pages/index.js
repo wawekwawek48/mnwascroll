@@ -22,7 +22,7 @@ export default function SecurityCheck() {
 
   const handleEnter = () => {
     // Redirect ke file static index.html di folder public
-    router.push('/bernda.html');
+    router.push('/reader.html');
   };
 
   return (
